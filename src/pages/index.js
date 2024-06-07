@@ -1,7 +1,7 @@
 import { getSession } from "next-auth/react";
 
 export default function Home() {
-  return <h2>CLIENTLIST PAGE</h2>;
+  return <h2>DASHBOARD</h2>;
 }
 
 export async function getServerSideProps(context) {
@@ -14,9 +14,12 @@ export async function getServerSideProps(context) {
         permanent: false,
       },
     };
+  } else {
+    return {
+      redirect: {
+        destination: "/clientlist",
+        permanent: false,
+      },
+    };
   }
-
-  return {
-    props: { session },
-  };
 }

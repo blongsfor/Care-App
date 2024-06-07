@@ -1,5 +1,7 @@
 import useSWR from "swr";
+import React from "react";
 import ClientList from "../components/ClientList";
+import LogoutButton from "../components/LogoutButton";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -8,6 +10,13 @@ export default function Homepage() {
 
   if (error) return <div>Failed to load clients</div>;
   if (!data) return <div>Loading...</div>;
+  console.log("data", data);
 
-  return <ClientList clients={data} />;
+  return (
+    <div>
+      <LogoutButton />
+      <h2>Client List</h2>
+      <ClientList clients={data} />
+    </div>
+  );
 }
