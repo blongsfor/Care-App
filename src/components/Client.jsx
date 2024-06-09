@@ -21,12 +21,11 @@ export default function Client({ image }) {
 
   return (
     <div>
-      {image && (
-        <img
-          src={client.picture}
-          alt={`${client.firstName} ${client.lastName}`}
-        />
-      )}
+      <img
+        src={client.picture}
+        alt={`${client.firstName} ${client.lastName}`}
+      />
+
       <p>Date of Birth: {client.dateOfBirth}</p>
       <p>Place of Birth: {client.placeOfBirth}</p>
       <p>
