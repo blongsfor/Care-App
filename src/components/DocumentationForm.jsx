@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useSWR from "swr";
 import { useRouter } from "next/router";
+import DateTimePickerValue from "../components/DateTimePicker";
 
 export default function DocumentationForm() {
   const router = useRouter();
@@ -32,6 +33,7 @@ export default function DocumentationForm() {
       <div>
         <h2>Create Documentation Entry</h2>
         <form>
+          <DateTimePickerValue />
           <div>
             <label htmlFor="title">Task</label>
             <select
