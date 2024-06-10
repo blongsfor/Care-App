@@ -2,6 +2,7 @@ import useSWR from "swr";
 import React from "react";
 import ClientList from "../components/ClientList";
 import LogoutButton from "../components/LogoutButton";
+import EntriesButton from "@/components/EntriesButton";
 
 export default function Homepage() {
   const { data, error } = useSWR("/api/clients");
@@ -13,6 +14,7 @@ export default function Homepage() {
   return (
     <div>
       <LogoutButton />
+      <EntriesButton />
       <h2>Client List</h2>
       <ClientList clients={data} />
     </div>
