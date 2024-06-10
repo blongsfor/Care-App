@@ -2,7 +2,7 @@
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import Client from "../../components/Client"; // Adjust path if necessary
-import LogoutButton from "@/components/LogoutButton";
+import LogoutButton from "../../components/LogoutButton";
 import BackButton from "@/components/BackButton";
 import DocumentButton from "@/components/DocumentButton";
 
