@@ -8,14 +8,7 @@ const BackButton = () => {
     router.back();
   };
 
-  return (
-    <button
-      onClick={handleBack}
-      style={{ padding: "10px 20px", cursor: "pointer" }}
-    >
-      Go Back
-    </button>
-  );
+  return <button onClick={handleBack}>Go Back</button>;
 };
 
 export default BackButton;
