@@ -48,6 +48,14 @@ export default function DocumentationForm() {
               ))}
             </select>
           </div>
+          <div>
+            <label htmlFor="documentation">Documentation</label>
+            <textarea
+              id="documentation"
+              name="documentation"
+              rows="15"
+            ></textarea>
+          </div>
 
           <button type="submit">Submit</button>
         </form>
