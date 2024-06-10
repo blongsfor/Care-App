@@ -5,13 +5,12 @@ export default async function handler(req, res) {
   await dbConnect();
 
   if (req.method === "GET") {
-    console.log("hier sollte Entry???");
     try {
-      const entries = await Entry.find();
-      //   console.log("clients", tasks);
-      console.log("hier sollte entry;", entries);
+      const entries = await Entry.find().lean();
+
       res.status(200).json(entries);
     } catch (error) {
+      console.error("Error fetching entries:", error);
       res.status(500).json({ error: "Failed to fetch entries" });
     }
   } else {
