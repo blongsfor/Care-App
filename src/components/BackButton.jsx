@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-const BackButton = () => {
+export default function BackButton() {
   const router = useRouter();
 
   const handleBack = () => {
@@ -9,6 +9,4 @@ const BackButton = () => {
   };
 
   return <button onClick={handleBack}>Go Back</button>;
-};
-
-export default BackButton;
+}

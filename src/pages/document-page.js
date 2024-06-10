@@ -1,7 +1,7 @@
 import BackButton from "@/components/BackButton";
 import React from "react";
 
-const DocumentationForm = () => {
+export default function DocumentationForm() {
   return (
     <>
       <div>
@@ -21,6 +21,4 @@ const DocumentationForm = () => {
       <BackButton />
     </>
   );
-};
-
-export default DocumentationForm;
+}
