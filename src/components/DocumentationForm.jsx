@@ -2,31 +2,10 @@ import React, { useState } from "react";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 import DateTimePickerValue from "../components/DateTimePicker";
+import Categoryelector from "./CategorySelector";
 
 export default function DocumentationForm() {
   const router = useRouter();
-  //   const { tasks } = router.query;
-  const [selectedTitle, setSelectedTitle] = useState("");
-
-  const { data: tasks = [], error } = useSWR(`/api/tasks`);
-
-  console.log("tasks data: ", tasks);
-
-  if (!tasks && !error) {
-    return <h1>Loading ...</h1>;
-  }
-
-  if (error) {
-    return <h1>Error loading client data</h1>;
-  }
-
-  if (!tasks) {
-    return <h1>Client data not available</h1>;
-  }
-
-  const handleTitleChange = (event) => {
-    setSelectedTitle(event.target.value);
-  };
 
   return (
     <>
@@ -34,22 +13,8 @@ export default function DocumentationForm() {
         <h2>Create Documentation Entry</h2>
         <form>
           <DateTimePickerValue />
-          <div>
-            <label htmlFor="title">Task</label>
-            <select
-              id="title"
-              name="title"
-              value={selectedTitle}
-              onChange={handleTitleChange}
-            >
-              <option value="">Select Title</option>
-              {tasks?.map((task) => (
-                <option key={task.id} value={task.task}>
-                  {task.task}
-                </option>
-              ))}
-            </select>
-          </div>
+          <Categoryelector />
+
           <div>
             <label htmlFor="documentation">Documentation</label>
             <textarea
