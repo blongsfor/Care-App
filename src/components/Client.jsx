@@ -18,6 +18,7 @@ export default function Client({ image }) {
   if (!client) {
     return <h1>Client data not available</h1>;
   }
+  const datestring = new Date(client.dateOfBirth).toLocaleDateString("de-DE");
 
   return (
     <div>
@@ -26,7 +27,7 @@ export default function Client({ image }) {
         alt={`${client.firstName} ${client.lastName}`}
       />
 
-      <p>Date of Birth: {client.dateOfBirth}</p>
+      <p>Date of Birth: {datestring}</p>
       <p>Place of Birth: {client.placeOfBirth}</p>
       <p>
         Address: {client.address.street}, {client.address.city},{" "}
