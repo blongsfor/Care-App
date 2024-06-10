@@ -6,7 +6,7 @@ const DocumentButton = () => {
   const router = useRouter();
 
   const handleRedirect = () => {
-    router.push("/documentation-form"); // Change '/form-page' to the actual path of your form page
+    router.push("/documentation-form");
   };
 
   return <button onClick={handleRedirect}>Create Documentation</button>;
