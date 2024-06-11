@@ -1,4 +1,3 @@
-// components/RedirectButton.jsx
 import { useRouter } from "next/router";
 import React from "react";
 
